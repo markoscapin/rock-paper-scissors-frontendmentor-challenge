@@ -1,0 +1,124 @@
+.attribution {
+     font-size: 11px; 
+     text-align: center;
+     
+     
+     
+     }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* This is the class for the circle outside paper, scissors and rock buttons */
+.circle {
+    border: 1rem solid;
+    border-radius: 50%;
+    background-color: transparent;
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    bottom: -5px;
+    box-shadow: 0 -10px 0 5px lightgrey;;
+    background-color:white;
+}
+
+.circle img {
+    width: 50%;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Those 3 are the classes to set colors on JS */
+.paper {
+    border-color: hsl(230, 89%, 65%);
+    box-shadow: 0px 3px hsl(230, 89%, 62%);
+}
+
+.scissors {
+    border-color:hsl(40, 84%, 53%);
+    box-shadow: 0px 3px hsl(39, 89%, 49%);
+}
+
+.rock {
+    border-color: hsl(349, 70%, 56%);
+    box-shadow: 0px 3px hsl(349, 71%, 52%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(circle at top, hsl(214, 47%, 23%) 25%, hsl(237, 49%, 15%) 100%);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+main {
+
+}
+
+/* Score Section */
+.score-section-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 60%;
+    background-color: transparent;
+    border: 0.2rem solid hsl(217, 16%, 45%);
+    border-radius: 20px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.actual-score-container {
+    background-color: white;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.5rem 2rem;
+}
+
+.score-title{
+    color: hsl(229, 64%, 46%);
+    font-weight: 600;
+    font-size: 1rem;
+
+}
+
+.actual-score {
+    font-size: 3rem;
+    color: hsl(229, 25%, 31%);
+    font-weight: 700;
+}
+
+/* Rules button */
+#rules-btn {
+    outline: none;
+    border: 0.15rem solid hsl(217, 16%, 45%);
+    font-weight: 600;
+    padding: 0.5rem 2.5rem;
+    background-color: transparent;
+    color: hsl(217, 16%, 80%);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 3rem;
+    letter-spacing: 1.2px;
+}
