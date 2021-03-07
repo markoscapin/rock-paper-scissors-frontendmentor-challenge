@@ -20,11 +20,12 @@
     border-radius: 50%;
     background-color: transparent;
     position: relative;
-    width: 5rem;
-    height: 5rem;
+    width: 10rem;
+    height: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 3rem 3rem;
 }
 
 .circle::before {
@@ -39,9 +40,6 @@
     background-color:white;
 }
 
-.circle img {
-    width: 50%;
-}
 
 button:focus {
     outline: none;
@@ -50,17 +48,17 @@ button:focus {
 /* Those 3 are the classes to set colors on JS */
 .paper {
     border-color: hsl(230, 89%, 65%);
-    box-shadow: 0px 3px hsl(230, 89%, 62%);
+    box-shadow: 0px 7px hsl(230, 89%, 62%);
 }
 
 .scissors {
     border-color:hsl(40, 84%, 53%);
-    box-shadow: 0px 3px hsl(39, 89%, 49%);
+    box-shadow: 0px 7px hsl(39, 89%, 49%);
 }
 
 .rock {
     border-color: hsl(349, 70%, 56%);
-    box-shadow: 0px 3px hsl(349, 71%, 52%);
+    box-shadow: 0px 7px hsl(349, 71%, 52%);
 }
 
 body {
@@ -71,10 +69,16 @@ body {
 }
 
 main {
-
+    max-width: 1366px;
+    max-height: 768px;
+    margin: auto;
 }
 
 /* Score Section */
+#score {
+    padding: 2.5rem;
+}
+
 .score-section-container {
     display: flex;
     justify-content: space-between;
@@ -121,4 +125,38 @@ main {
     right: 0;
     margin: 3rem;
     letter-spacing: 1.2px;
+}
+
+/* game Section */
+#game {
+    /* This is setted to be display none when you pick a choice */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    display: none;
+}
+
+#game::before {
+    content: "";
+    background: url(../images/bg-triangle.svg) no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-position: center;
+    z-index: -1;
+}
+
+.paper-scissor-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Win or lose Section */
+#winOrLose {
+    display: flex;
+    flex-direction: row;
 }

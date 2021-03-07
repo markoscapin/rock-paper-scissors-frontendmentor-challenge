@@ -16,6 +16,7 @@
 </head>
 <body>
   <main>
+    <!-- Section Score -->
     <section id="score">
       <div class="score-section-container">
         <img src="images/logo.svg" alt="">
@@ -29,37 +30,53 @@
 
     <div class="rules">
       <button id="rules-btn">Rules</button>
-      
     </div>
-  
-    
-    
-  
-    You Picked
-    The House Picked
-  
-    You Win
-    You Lose
-  
-    Play Again
-  
+
+    <!-- Section Game -->
     <section id="game">
-  
-      <button class="circle paper">
-        <img src="images/icon-paper.svg" alt="">
-      </button>
-  
-      <button class="circle scissors">
-        <img src="images/icon-scissors.svg" alt="">
-      </button>
+      <div class="paper-scissor-container">
+        <button class="circle paper">
+          <img src="images/icon-paper.svg" alt="">
+        </button>
+    
+        <button class="circle scissors">
+          <img src="images/icon-scissors.svg" alt="">
+        </button>
+      </div>
+      
   
       <button class="circle rock">
         <img src="images/icon-rock.svg" alt="">
       </button>
     </section>
+
+    <section class="winOrLose">
+      <div class="picked-container">
+        <p>You Picked</p>
+        <figure class="circle paper">
+          <img src="images/icon-paper.svg" alt="">
+        </figure>
+      </div>
+      <div class="house-picked-container">
+        <p>The House Picked</p>
+        <figure class="circle rock">
+          <img src="images/icon-rock.svg" alt="">
+        </figure>
+      </div>
+
+    </section>
+
+
+
   </main>
   
+ 
+  
 
+  You Win
+  You Lose
+
+  Play Again
 
   
 
