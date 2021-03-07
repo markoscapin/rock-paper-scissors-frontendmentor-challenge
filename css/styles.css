@@ -125,6 +125,7 @@ main {
     right: 0;
     margin: 3rem;
     letter-spacing: 1.2px;
+    text-transform: uppercase;
 }
 
 /* game Section */
@@ -159,4 +160,19 @@ main {
 #winOrLose {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    text-align: center;
 }
+
+#winOrLose p {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+
+}
+
+.picked {
+    margin: 3rem;
+}
+
