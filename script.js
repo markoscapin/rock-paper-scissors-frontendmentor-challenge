@@ -8,4 +8,3 @@ var winOrLoseStyle = getComputedStyle(winOrLose);
 
 
 
-

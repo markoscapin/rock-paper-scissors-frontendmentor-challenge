@@ -1,9 +1,6 @@
 .attribution {
      font-size: 11px; 
      text-align: center;
-     
-     
-     
      }
 .attribution a { color: hsl(228, 45%, 44%); }
 
@@ -11,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
 }
 
 
@@ -65,7 +63,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: radial-gradient(circle at top, hsl(214, 47%, 23%) 25%, hsl(237, 49%, 15%) 100%);
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    
 }
 
 main {
@@ -126,6 +124,7 @@ main {
     margin: 3rem;
     letter-spacing: 1.2px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 /* game Section */
@@ -158,10 +157,14 @@ main {
 
 /* Win or lose Section */
 #winOrLose {
-    display: flex;
-    flex-direction: row;
+    display: grid;
     justify-content: center;
     text-align: center;
+    grid-template-areas: "pickedOne match housePick";
+
+    /* for the mobile version the grid areas will be like:
+    grid-template-areas:'pickedOne housePick' 
+                        'match match'; */
 }
 
 #winOrLose p {
@@ -190,8 +193,6 @@ main {
     transform: scale(1.5)
 }
 
-
-
 .bkg-layer {
     background-color: black;
     opacity: 0.2;
@@ -203,4 +204,50 @@ main {
     align-items: center;
     margin: 3rem;
     transform: scale(0.8);
+}
+
+.picked-container {
+    grid-area: pickedOne
+}
+
+.house-picked-container {
+    grid-area: housePick;
+}
+
+
+/* This is the game */
+.winnerOrLoser {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    grid-area: match;
+
+    display: none;
+
+}
+
+
+.matchResult {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.playAgain {
+    outline: none;
+    background-color: white;
+    width: 15rem;
+    padding: 1rem 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1.2px;
+    color: hsl(349, 71%, 52%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
