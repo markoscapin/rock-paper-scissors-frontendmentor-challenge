@@ -1,7 +1,13 @@
 .attribution {
-     font-size: 11px; 
-     text-align: center;
-     }
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem 0;
+    margin: auto;
+    width: 100%;
+}
+
 .attribution a { color: hsl(228, 45%, 44%); }
 
 * {
@@ -24,6 +30,7 @@
     justify-content: center;
     align-items: center;
     margin: 0 3rem 3rem;
+    cursor: pointer;
 }
 
 .circle::before {
@@ -165,6 +172,8 @@ main {
     /* for the mobile version the grid areas will be like:
     grid-template-areas:'pickedOne housePick' 
                         'match match'; */
+    /* display by default is "none" */
+    
 }
 
 #winOrLose p {
@@ -250,4 +259,58 @@ main {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+
+@media (max-width: 900px) {
+    /* score section */
+    #score {
+        padding: 2rem;
+    }
+
+    .score-section-container{
+        max-width: 100%;
+        padding: 3%;
+        border-radius: 15px;
+    }
+
+    .logo-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .logo-container {
+        width: 30%;
+    }
+
+    .actual-score-container{
+        border-radius: 5px;
+    }
+
+    .actual-score {
+        font-size: 2rem;
+    }
+
+    /* Rules button */
+    #rules-btn {
+        right: 50%;
+        transform: translate(50%, 0);
+        margin: 3rem 0;
+    }
+
+    /* game section */
+    #game::before {
+        background-size: contain;
+        transform: scale(0.7);
+    }
+    .circle {
+        width: 8rem;
+        height: 8rem;
+        margin: 1.5rem;
+    }
+
+    .attribution {
+        display: none;
+    }
+
 }
