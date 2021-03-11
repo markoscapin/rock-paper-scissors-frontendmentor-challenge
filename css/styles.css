@@ -47,18 +47,18 @@ button:focus {
 
 /* Those 3 are the classes to set colors on JS */
 .paper {
-    border-color: hsl(230, 89%, 65%);
-    box-shadow: 0px 7px hsl(230, 89%, 62%);
+    border-color: hsl(230, 89%, 65%)!important;
+    box-shadow: 0px 7px hsl(230, 89%, 62%)!important;
 }
 
 .scissors {
-    border-color:hsl(40, 84%, 53%);
-    box-shadow: 0px 7px hsl(39, 89%, 49%);
+    border-color:hsl(40, 84%, 53%)!important;
+    box-shadow: 0px 7px hsl(39, 89%, 49%)!important;
 }
 
 .rock {
-    border-color: hsl(349, 70%, 56%);
-    box-shadow: 0px 7px hsl(349, 71%, 52%);
+    border-color: hsl(349, 70%, 56%)!important;
+    box-shadow: 0px 7px hsl(349, 71%, 52%)!important;
 }
 
 body {
@@ -169,10 +169,38 @@ main {
     color: white;
     font-weight: 600;
     font-size: 1.5rem;
-
+    margin: 1rem auto;
 }
+
 
 .picked {
     margin: 3rem;
 }
 
+#winOrLose .circle{
+    width: 15rem;
+    height: 15rem;
+    border: 1.5rem solid;
+}
+#winOrLose .circle::before{
+    bottom: -8px;
+}
+
+.circle.picked img {
+    transform: scale(1.5)
+}
+
+
+
+.bkg-layer {
+    background-color: black;
+    opacity: 0.2;
+    border-radius: 50%;
+    width: 14rem;
+    height: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    transform: scale(0.8);
+}
