@@ -6,6 +6,7 @@
     padding: 1rem 0;
     margin: auto;
     width: 100%;
+    color: white;
 }
 
 .attribution a { color: hsl(228, 45%, 44%); }
@@ -183,22 +184,21 @@ main {
     margin: 1rem auto;
 }
 
-
-.picked {
-    margin: 3rem;
-}
-
 #winOrLose .circle{
     width: 15rem;
     height: 15rem;
     border: 1.5rem solid;
+    margin: 3rem;
+    cursor: auto;
+
 }
 #winOrLose .circle::before{
     bottom: -8px;
 }
 
-.circle.picked img {
-    transform: scale(1.5)
+#winOrLose .circle img {
+    transform: scale(1.5);
+    
 }
 
 .bkg-layer {
@@ -266,7 +266,7 @@ main {
 
 /* Rules section */
 #rules-overview {
-    display: flex;
+    display: none;
     position: absolute;
     z-index: 2;
     top: 0;
@@ -274,8 +274,7 @@ main {
     height: 100%;
     justify-content: center;
     align-items: center;
-
-    display: none;
+    
     /* This will have display flex when clicking the rule button */
 }
 
@@ -324,6 +323,17 @@ main {
     transform: translate(0, 50%);
 }
 
+
+/* This class is only to apply a before element to the winner choice */
+.winner::after {
+    content: "";
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    box-shadow: 0px 0px 10rem 20px white;
+    z-index: -2;
+
+}
 
 
 @media (max-width: 900px) {
@@ -381,7 +391,7 @@ main {
     #winOrLose {
         grid-template-areas:'pickedOne housePick' 
         'match match';
-        justify-content: normal;
+        
     }
 
     #winOrLose .circle {
