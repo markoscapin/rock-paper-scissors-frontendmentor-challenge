@@ -135,6 +135,7 @@ for (var i = 0; i<gameCircles.length; i++) {
 
 rulesButton.addEventListener("click", function() {
     rulesOverview.style.display = "flex";
+    rulesOverview.style.background = "rgba(0,0,0, 0.50)"
     exitFromRules.addEventListener("click", function() {
         rulesOverview.style.display = "none";
     })    
