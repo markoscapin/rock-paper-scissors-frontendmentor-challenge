@@ -107,6 +107,7 @@ main {
     color: hsl(229, 64%, 46%);
     font-weight: 600;
     font-size: 1rem;
+    text-transform: uppercase;
 
 }
 
@@ -142,8 +143,6 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-
-    display: none;
 }
 
 #game::before {
@@ -164,7 +163,7 @@ main {
 
 /* Win or lose Section */
 #winOrLose {
-    display: grid;
+    display: none;
     justify-content: center;
     text-align: center;
     grid-template-areas: "pickedOne match housePick";
@@ -172,7 +171,7 @@ main {
     /* for the mobile version the grid areas will be like:
     grid-template-areas:'pickedOne housePick' 
                         'match match'; */
-    /* display by default is "none" */
+    /* display by default is "none"  and it will be "grid" once that one button of the game is clicked*/
     
 }
 
@@ -216,11 +215,15 @@ main {
 }
 
 .picked-container {
-    grid-area: pickedOne
+    grid-area: pickedOne;
+    display: flex;
+    flex-direction: column;
 }
 
 .house-picked-container {
     grid-area: housePick;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -261,8 +264,73 @@ main {
     cursor: pointer;
 }
 
+/* Rules section */
+#rules-overview {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    display: none;
+    /* This will have display flex when clicking the rule button */
+}
+
+.card {
+    padding: 1.5rem;
+    background-color: white;
+    display: grid;
+    grid-template-areas: "title close"
+                         "image image"
+    ;
+    border-radius: 5px;
+}
+
+.rules-title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: hsl(229, 25%, 31%);
+    padding-top: 0.1rem;
+    grid-area: title;
+}
+
+.rules-description {
+    padding-top: 2rem;
+    grid-area: image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.exitFromRules {
+    outline: gray;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    grid-area: close;
+    position: relative;
+}
+
+.exitFromRules i {
+    color: lightgrey;
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    transform: translate(0, 50%);
+}
+
+
 
 @media (max-width: 900px) {
+    .attribution {
+        display: none;
+    }
+
     /* score section */
     #score {
         padding: 2rem;
@@ -271,7 +339,7 @@ main {
     .score-section-container{
         max-width: 100%;
         padding: 3%;
-        border-radius: 15px;
+        border-radius: 5px;
     }
 
     .logo-container img {
@@ -303,14 +371,73 @@ main {
         background-size: contain;
         transform: scale(0.7);
     }
-    .circle {
+    .circle, #winOrLose .circle, .bkg-layer {
         width: 8rem;
         height: 8rem;
         margin: 1.5rem;
     }
 
-    .attribution {
-        display: none;
+    /* winOrLose section */
+    #winOrLose {
+        grid-template-areas:'pickedOne housePick' 
+        'match match';
+        justify-content: normal;
     }
 
+    #winOrLose .circle {
+        border: 1rem solid;
+    }
+
+    #winOrLose .circle img {
+        transform: scale(1);
+    }
+
+    #winOrLose p {
+        font-size: 1rem;
+    }
+
+    .picked-container, .house-picked-container{
+        flex-direction: column-reverse;
+    }
+
+    .playAgain{
+        color: hsl(229, 25%, 31%);
+        padding: 0.7rem 0;
+    }
+
+    .score-title {
+        font-size: 0.8rem;
+    }
+
+    /* rules section */
+    .card {
+        grid-template-areas: 
+            "title"
+            "image"
+            "close";
+        width: 100%;
+        height: 100%;
+    }
+
+    .rules-description {
+        padding-top: 0;
+    }
+
+    .exitFromRules i {
+        color: lightgrey;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        transform: translate(0, 0);
+    }
+
+    .rules-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+    }
+
+
+    
 }
